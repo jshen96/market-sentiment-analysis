@@ -1,4 +1,7 @@
-
+var fs = require('fs');
+ 
+var contents = fs.readFileSync('./Article', 'utf8');
+console.log(contents);
 // Imports the Google Cloud client library
 const language = require('@google-cloud/language');
 
@@ -6,7 +9,7 @@ const language = require('@google-cloud/language');
 const client = new language.LanguageServiceClient();
 
 // The text to analyze
-const text = 'Hello, world!';
+const text =  contents;
 
 const document = {
   content: text,

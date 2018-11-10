@@ -10,6 +10,7 @@ alpha.data.quote('GOOGL', 'compact', 'json').then(data => {
 
 
 const dbreset = require('./server/db/schema.js');
+
 const db = require('./server/db/db.js');
 
 db.connect();

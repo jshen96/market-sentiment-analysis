@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ysoo/market-sentiment-analysis#readme",
   "dependencies": {
+    "@google-cloud/language": "^2.0.0",
     "express": "^4.16.4"
   }
 }

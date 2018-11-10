@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "marketsentiments-1541873508672",
+  "private_key_id": "3a5e6f1b584995d35b996065677a06677ce2b86e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCkR0eRDF/spsb/\nhAtJ7IEjkWkLd/L8xKcwpBLk3Ctfs4iQhu5zY+FFAOOdBrKTWpenxcZR9jAZVnvx\ndVJKEbhtjgyxkdLNLkoiGjx4TA3gSPCEUaeclcOEjD5HGTveXPQCf++dYLxnz48Q\nvsQmruEn2nTbCp1BrmrLYNvjRkI8S14d10dLS+Eg7TafVWxNHFzVSUoypxFFb2YG\n+tJ/f7Q/oTrc+f/LcK23KCDpOe6dkClHVMZYSGUUBT8/mySfgAbYyoMJ0KfgjT/u\nSr4rQXKXpZ3Jf7gPAPAnMMYxoCA1Bw7lS6AgiBWDMzatAtHbqYwynM7wv14Z156h\nufeNnRFlAgMBAAECggEACwh0gIPdv2WWENwb6/uT0sE11lzYd2x3tBcY48D7ssI6\nhkZhpmNLYliEcOvdu3LGo7BvONr5cQIzccyI2cul4Mm9BYH/L+OPfAnaDNRCzFDp\nwmE/ig8u4eyPVDQYJr+EbdSM0buI+8nfWGcPgm+VVJlh5sIoPJyLtJwNOI7j7Ouh\nWM1IpYc5HBECpPnl5OaeFEpimMa/3KwIn/YjnB9ak4g5qT5XaFDVbu0giaxkH5Sw\nzaUYxH/9ch7pFl1gFOLZT5N9tuWWDu4FJBWYoLlWKldIv5Pm33QhW6Zb0fPk4bEg\nMneF3+cQ8oqmPoK3fX89QDZe9HZCn8szs83UAwXHMwKBgQDSh7nOCZb1ZLI1V0Ot\n+FBxDDnkl/BvOcHPfJftE8AX3NVoZOJT8l5BDZC0FU2Mq05DYlp4QwXOL7k76SlX\nwz9WH4a7BuNZpdx1PvdJXZcOi5Lx3mI/BzyhKGOLJZAxjl1f7WLr8xAgGzmCxtwV\nFR2OxL4JHSdBIeDx6iTWN9xx+wKBgQDHwkgUj2O/bZan8guV+n/Yp8smfTv2GCF8\n1VAMK69mtYOaUMZaHwbdZPTzoT1Ex5s92E3jjcG8FHaiOGCACtC/Ab8CeINWSKUY\n2TfJs4Yaql0dHBQrc13Hqkea8Ck+CYI6HZXNmUZ4s1kDfAIJggTHKrcRRbl+PcwS\nPRACFOKMHwKBgEMofMMXGArLxnVxkutqLO8DAWzEczRn7kVr72L3S+3Qylr046X3\nyM1jsGdh7E0VUG/6bfWzG6T8YFCWPlP6ureUcvwyZE/ysvLL1UKYElnXeFajpB+L\nBXI7WhXHM8o7Kdox9b5i2SAEz0HCge5PwBAM/roVjLIgRoulL38ObsoFAoGBAICp\n3ot/oBvYlkUuXdAIPPhreyobV9e2yzsAmkJ8kMly+IUYqem6Ok23jR6vKCt49cDr\n5Z8/2x0tgQwTi/RtAu9ETKdmwBF/UPekUY6VFzdtq/Pn9gXWlPzZ7K0bKzVOIpcU\nHz0CEKYFvrvDz/wXxsQR+0AgzM1HOH423my4zwK5AoGBAIPrXwo6J9mx7tPubJjw\nGs1/Y0erLTdNFZppVUX0OJVwmOUnmmuXxtcOTMi0zqkxc4O3jEoY5KfrdsZtx2EU\ni+HpjyWKLaS771NsCJX+niWkjWZVyEcVDPyYavm5VarE+SfsDJtvTSUWmCHIesFi\ndc+zTmu72VI4BW0cpIyGZvJx\n-----END PRIVATE KEY-----\n",
+  "client_email": "starting-account-aac1wyg4nspf@marketsentiments-1541873508672.iam.gserviceaccount.com",
+  "client_id": "113691518084994376037",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/starting-account-aac1wyg4nspf%40marketsentiments-1541873508672.iam.gserviceaccount.com"
+}

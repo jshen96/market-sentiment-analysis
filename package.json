@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/ysoo/market-sentiment-analysis#readme",
   "dependencies": {
+    "alphavantage": "^1.2.0",
+    "ejs": "^2.6.1",
     "express": "^4.16.4"
   }
 }

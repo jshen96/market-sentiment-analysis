@@ -7,7 +7,7 @@ class CompanyTag extends Component {
       render() {
         return (
           <div className="company-container">
-            <div className="title">TestApp</div>
+            <div className="title">{this.props.name}</div>
             
           </div>
         )

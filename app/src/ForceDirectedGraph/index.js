@@ -20,6 +20,7 @@ export default class ForceDirectedGraph extends Component {
       let data = this.state.data;
       let colors = this.state.colors;
       let callback = this.props.showComment;
+      let callbackClick = this.props.moveToTrends;
       //Initializing chart
       const chart = d3.select('.chart')
         .attr('width', width)
@@ -101,6 +102,14 @@ export default class ForceDirectedGraph extends Component {
         {
           console.log(d.name)
           callback(d);
+        })
+        .on("mouseclick", function(d)
+        {
+          console.log(d.name)
+          if (d.level == 1) {
+            callbackClick(d)
+          }
+        
         })
         .on("mouseout", function(d)
         {

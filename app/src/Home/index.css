@@ -14,3 +14,10 @@
   right: 2em;
   border-radius: 5px;
 }
+
+.central-logo {
+  position: absolute;
+  top: 50%;
+  left: 50.5%;
+  transform: translate(-50%,-50%)
+}

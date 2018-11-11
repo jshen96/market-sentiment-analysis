@@ -23,9 +23,28 @@
   position: absolute;
 }
 
-.animation {
+.animation-card {
   position: absolute;
   left: 80%;
   bottom: 2em;
-  transform: translateX(-50%)
+  transform: translateX(-50%);
+  display: flex;
+  max-height: 350px;
+  max-width: 250px;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.animation-trending {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.animation-text {
+  color: black
 }

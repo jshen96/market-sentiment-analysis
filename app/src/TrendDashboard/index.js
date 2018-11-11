@@ -8,7 +8,10 @@ import Lottie from 'react-lottie';
 import angery from './angery.json';
 import laugh from './laugh.json';
 import wow from './wow.json';
+import fever from './fever.json';
+import {connect} from 'react-redux';
 import {returnHome} from '../NavBar/NavBarService';
+import {resetChart} from '../features/chart/actions';
 class TrendDashboard extends Component {
 
   componentDidMount() {
@@ -17,19 +20,7 @@ class TrendDashboard extends Component {
     console.log(this.refs.button.getBoundingClientRect())
   }
   renderGridNews =() => {
-    let data = [{
-     
-      content: 'test test test tes t'
-    },{
-     
-      content: 'test testfasdfa test tes t'
-    },{
-     
-      content: 'test test sdstest tes t'
-    },{
-     
-      content: 'test test test tes t'
-    }]
+    let data = this.props.articles
 
     return (
       <Grid columns={2} divided>
@@ -65,24 +56,61 @@ class TrendDashboard extends Component {
           }
         };
 
+        const defaultOptions2 = {
+          loop: true,
+          autoplay: true, 
+          animationData: fever,
+          rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+          }
+        };
+
         return (
           <div className="content">
             <div ref="button" className="background-chart">
-               <Chart />
+               <Chart trends={this.props.trends} articles={this.props.articles} stock={this.props.stock}/>
             </div>
-            <CompanyTag />
+            <CompanyTag name={this.props.company_name}/>
             <div className="card">
               {this.renderGridNews()}
             </div>
-            <div className="animation">
+           
+            <div className="animation-card">
             <Lottie options={defaultOptions}
               height={300}
               width={300}
               />
+              <div className="animation-trending">
+                <Lottie options={defaultOptions2}
+                height={150}
+                width={150}
+                />
+                <div className="animation-text">{this.props.articles.length}</div>
+              </div>
             </div>
           </div>
         )
       }
 }
 
-export default TrendDashboard;
+const mapStateToProps = (state,props) => {
+  return {
+    articles: state.chart.articles,
+    trends: state.chart.trends,
+    stock: state.chart.stock,
+    company_name: state.chart.name,
+    id: state.chart.id
+  }
+}
+
+
+const mapDispatchToProps = dispatch => {
+  return {
+    resetChart: () => {
+      dispatch(resetChart())
+    },
+  };
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(TrendDashboard);

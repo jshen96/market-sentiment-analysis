@@ -4,7 +4,8 @@ import Arrow from '../Arrow';
 import {Link} from 'react-router-dom';
 import './index.css';
 import {setNavbarRef} from './NavBarService';
-
+import Lottie from 'react-lottie';
+import fever from './fever.json';
 class NavBar extends Component {
     constructor(props) {
         super(props);
@@ -20,6 +21,15 @@ class NavBar extends Component {
     }
 
       render() {
+        const defaultOptions2 = {
+            loop: true,
+            autoplay: true, 
+            animationData: fever,
+            rendererSettings: {
+              preserveAspectRatio: 'xMidYMid slice'
+            }
+          };
+          let appName = "Headlines"
         if (this.state.returnHome) {
             return (
                 <div className="navbar">
@@ -28,7 +38,7 @@ class NavBar extends Component {
                   <div className="back">
                     <Arrow />
                   </div>
-                  <div className="mini">TestApp</div>  
+                  <div className="mini">{appName}</div>  
                   </div>
                   </Link>
             
@@ -37,7 +47,14 @@ class NavBar extends Component {
         }
         return (
           <div className="navbar">
-            <div className="title">TestApp</div>
+            <div className="left-nav-list">
+            <Lottie options={defaultOptions2}
+                height={200}
+                width={200}
+                />
+                <div className="title leftadjustment">{appName}</div>
+            </div>
+            
             <SearchBar /> 
           </div>
         )

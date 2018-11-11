@@ -5,23 +5,25 @@ class Chart extends Component {
         super(props);
         this.state = {
             data : {
-                labels: ["one", "two", "three","one", "two", "three"], // array of strings
+                labels: this.props.trends["labels"], // array of strings
                 datasets: [
                 {
-                    label : "Company Name", // name of label
+                    label : this.props.trends["name"], // name of label
                     borderColor : '#FF8080',
                     backgroundColor : 'rgba(0,0,0,0.0)',
                     
-                    data : [4,15, -8,15,30, 9], // array of strings
+                    data : this.props.trends["data"], // array of strings
                 },{
-                    label : "Economy Name", // name of label
+                    label : this.props.stock["name"], // name of label
                     borderColor : '#FFED9F',
                     backgroundColor : 'rgba(0,0,0,0.0)',
                     
-                    data : [10,5, -7,20,30, 18],
+                    data : this.props.stock["data"],
                 }], // array of dicts
             }
         }
+        console.log("test")
+        console.log(this.props.trends)
     }
 
             

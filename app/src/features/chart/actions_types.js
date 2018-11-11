@@ -1,0 +1,4 @@
+export const POPULATE_CHART = "POPULATE_CHART"
+export const RESET_CHART = "RESET_CHART"
+export const ERROR = "ERROR"
+export const RECEIVED_UPDATE = "RECEEIVED_QMTT"

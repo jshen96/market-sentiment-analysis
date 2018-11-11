@@ -1,6 +1,5 @@
 from newsapi import NewsApiClient
 import psycopg2
-from datetime import datetime
 
 #print('DATABASE PROGRAM STARTS')
 
@@ -23,8 +22,10 @@ for r in row:
    cid = r[1]
    top_headlines = newsapi.get_everything(q=s)
    if top_headlines['status'] == 'ok':
-       for art in top_headlines['articles']:
-           cur.execute("INSERT INTO company_articles_news (url, headline, content, dob, cid) VALUES (%s, %s, %s, %s, %s)", (art['url'], art['title'], art['description'], art['publishedAt'], cid))
+       for art in top_headlines['articles']: 
 
+cur.execute("INSERT INTO company_articles_news (url, headline, content, dob, cid) VALUES (%s, %s, %s, %s, %s) ON CONFLICT ON CONSTRAINT url DO NOTHING", (art['url'], art['title'], art['description'], art['publishedAt'], cid))
+cur.execute('SELECT version()')
+print(cur.fetchall())
 conn.commit()
 cur.close()

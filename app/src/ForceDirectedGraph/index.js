@@ -87,9 +87,18 @@ export default class ForceDirectedGraph extends Component {
         .attr('class', d => {
           var c = 'circle-node ';
           if (d.level == 0) c += 'central ';
-          else if (d.level == 1) c += 'group ';
+          else if (d.level == 1) {
+            c += 'group ';
+            let index = d.group % this.state.colors.length
+            if (index == 0) index += 1
+            c += colors[index] + ' ';
+          } else {
+            let index = d.group % this.state.colors.length
+            if (index == 0) index += 1
+            c += colors[index] + ' ';
+          }
 
-          c += colors[d.group] + ' ';
+          
           return c;
         })
         .text(d => {

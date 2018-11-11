@@ -8,13 +8,13 @@ class Chart extends Component {
                 labels: this.props.trends["labels"], // array of strings
                 datasets: [
                 {
-                    label : this.props.trends["name"], // name of label
+                    label : "Public reactions", // name of label
                     borderColor : '#FF8080',
                     backgroundColor : 'rgba(0,0,0,0.0)',
                     
                     data : this.props.trends["data"], // array of strings
                 },{
-                    label : this.props.stock["name"], // name of label
+                    label : "Stock", // name of label
                     borderColor : '#FFED9F',
                     backgroundColor : 'rgba(0,0,0,0.0)',
                     
@@ -31,7 +31,7 @@ class Chart extends Component {
           let options = {
               maintainAspectRatio : false,
               legend: {
-                display: false,
+                display: true,
                 position: 'right',
                 labels: {
                     fontColor: '#FFF',

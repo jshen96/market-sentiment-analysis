@@ -26,10 +26,11 @@ export const resetPopulation = ()=> {
 
 export const populateData = () => {
   return (dispatch) => {
+      console.log("Populate data called")
     return axios.get(`${API_URL}/getList`)
       .then(response => {
         dispatch(initializeSystem(0,response))
-
+        console.log("Fetch success: populate")
       })
       .catch(error => {
         //FIXME: do smth with error
@@ -55,12 +56,13 @@ export const initializeSystem = (status, data) => {
       status: status,
     }
   }
-
+  console.log("Initialize system")
+  console.log(data.data)
   return {
     type: types.REFRESH_LIST,
     status: status,
     payload: {
-      companies: data.data.result,
+      companies: data.data,
     }
   }
 }

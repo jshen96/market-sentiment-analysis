@@ -17,13 +17,11 @@
   },
   "homepage": "https://github.com/ysoo/market-sentiment-analysis#readme",
   "dependencies": {
+    "alphavantage": "^1.2.0",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "pg": "^7.6.1",
-<<<<<<< HEAD
-    "socket-io": "^1.0.0",
-    "socket.io": "^2.1.1"
-=======
+    "socket.io": "^2.1.1",
     "url": "^0.11.0"
->>>>>>> backend-branch
   }
 }

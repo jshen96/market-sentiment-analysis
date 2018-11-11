@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.retrieveData();
+   
   }
 
   renderNotification = () => {
@@ -63,20 +63,6 @@ class App extends Component {
     this.setState({hasNotification: false})
     this._notificationContent = {}
   }
-
-  getData = async () => {
-    try {
-      return await axios.get('http://localhost:3000/data')
-    } catch (error) {
-      console.error(error)
-    }
-  }
-  
-  retrieveData = async () => {
-    const responseFromServer = await this.getData()
-    console.log(responseFromServer)
-  }
-  
 
   toggle_outside = (e)  => {
     this.setState({is_checked: false, is_user_checked: false});

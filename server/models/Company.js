@@ -15,3 +15,11 @@ exports.getSemanticScoresWithName = async (company, time) => {
     const {rows} = await db.query(query, [company, time]);
     return rows;
 }
+
+exports.getCompanyName = async (id) => {
+    const query = `
+        select name from company where id = $1;
+    `
+    const {rows} = await db.query(query, [id]);
+    return rows[0]["name"];
+}

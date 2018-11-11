@@ -18,7 +18,7 @@ else {
     exports.db = {
         user: 'power_user',
         database: 'secret',
-        password: '$poweruserpassword',
+        password: '1234',
         host: 'localhost',
         port: 5432,
         max: 20,

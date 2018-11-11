@@ -1,0 +1,39 @@
+AAPL Apple Inc.
+ACN Accenture plc
+AMZN Amazon.com (http://amazon.com/)
+BA Boeing Co.
+BRK.B Berkshire Hathaway
+CHTR Charter Communications
+COST Costco Wholesale Corp.
+CSCO Cisco Systems
+DIS The Walt Disney Company
+EMR Emerson Electric Co.
+FB Facebook
+FOX Twenty-First Century Fox B
+GE General Electric
+GM General Motors
+GOOGL Alphabet Inc. A
+GS Goldman Sachs
+HD Home Depot
+HON Honeywell
+IBM International Business Machines
+JPM JPMorgan Chase & Co.
+KO The Coca-Cola Company
+LMT Lockheed Martin
+MCD McDonald's Corp
+MS Morgan Stanley
+MSFT Microsoft
+NFLX Netflix
+NKE Nike, Inc.
+NVDA NVIDIA Corp.
+ORCL Oracle Corporation
+PEP PepsiCo
+PG Procter & Gamble Co
+QCOM Qualcomm Inc.
+SBUX Starbucks Corp.
+SPG Simon Property Group, Inc.
+TGT Target Corporation
+UNH UnitedHealth Group
+V Visa Inc.
+WMT Walmart
+XOM Exxon Mobil Corp.

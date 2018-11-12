@@ -49,8 +49,7 @@ class Home extends Component {
       }
 
       moveToTrends = (data) => {
-        //this.props.populateChart(data.id);
-        //this.props.populateChart(1)
+        this.props.populateChart(data.id);
         this.props.history.push('/trends');
         returnHome(true)
       }

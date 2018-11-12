@@ -30,6 +30,7 @@ export const resetChart = (msg)=> {
 
 export const populateChart = (company_id) => {
   return (dispatch) => {
+      console.log("Populate chart called")
     return axios.post(`${API_URL}/company`,{"company_id": company_id.toString()})
       .then(response => {
         dispatch(initializeChart(0,response))
@@ -60,15 +61,17 @@ export const initializeChart = (status, data) => {
     }
   }
 
+  console.log("Getting result")
+  console.log(data.data)
   return {
     type: types.POPULATE_CHART,
     status: status,
     payload: {
-      articles: data.data.result.articles,
-      trends: data.data.result.trends,
-      stock: data.data.result.stock,
-      id: data.data.result.id,
-      name: data.data.result.name
+      articles: data.data.articles,
+      trends: data.data.trends,
+      stock: data.data.stock,
+      id: data.data.id,
+      name: data.data.name
     }
   }
 }

@@ -2,8 +2,8 @@ const db = require('../db/db.js');
 
 exports.getTrendWithCompanyId = async (company, time) => {
     const query = `
-    select * from company_tweets where cid = $1 and dob >= $2;
+    select * from company_trends where cid = $1;
 `
-    const {rows} = await db.query(query, [company, time]);
+    const {rows} = await db.query(query, [company]);
     return rows;
 }

@@ -13,7 +13,12 @@ import {connect} from 'react-redux';
 import {returnHome} from '../NavBar/NavBarService';
 import {resetChart} from '../features/chart/actions';
 class TrendDashboard extends Component {
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentMood: angery
+    }
+  }
   componentDidMount() {
     console.log("Mount")
     returnHome(true)
@@ -22,35 +27,41 @@ class TrendDashboard extends Component {
   renderGridNews =() => {
     let data = this.props.articles
 
-    return (
-      <Grid columns={2} divided>
-      <Grid.Row>
-        <Grid.Column>
-          <ContentItem counter={1} content={data[0].content}/>
-        </Grid.Column>
-        <Grid.Column>
-          <ContentItem counter={2} content={data[1].content}/>  
-        </Grid.Column>
-      
-      </Grid.Row>
+    if (data == null) {
+      return (
+        <div className="card">
 
-      <Grid.Row>
-        <Grid.Column>
-          <ContentItem counter={3} content={data[2].content}/>
-        </Grid.Column>
-        <Grid.Column>
-        <ContentItem counter={4} content={data[3].content}/>
-        </Grid.Column>
-       
-      </Grid.Row>
-    </Grid>
-    )
+        </div>
+      )
+    } else {
+      if (data.length > 4) {
+        data = data.slice(0, 4)
+      }
+      return (
+        <div className="card flex-col">
+        {
+          data.map((el, index) => {
+            return (
+              <ContentItem counter={index + 1} content={data[index].content}/>
+            )
+          })
+        }
+      </div>
+      )
+    }
+    
   }
+
+    updateEmoji = (happy) => {
+      if (happy) {
+        this.setState({currentMood: laugh})
+      }
+    }
       render() {
         const defaultOptions = {
           loop: true,
           autoplay: true, 
-          animationData: angery,
+          animationData: this.state.currentMood,
           rendererSettings: {
             preserveAspectRatio: 'xMidYMid slice'
           }
@@ -68,12 +79,12 @@ class TrendDashboard extends Component {
         return (
           <div className="content">
             <div ref="button" className="background-chart">
-               <Chart trends={this.props.trends} articles={this.props.articles} stock={this.props.stock}/>
+               <Chart trends={this.props.trends} articles={this.props.articles} labels={this.props.date_labels} stock={this.props.stock} updateMood={this.updateEmoji}/>
             </div>
             <CompanyTag name={this.props.company_name}/>
-            <div className="card">
+    
               {this.renderGridNews()}
-            </div>
+   
            
             <div className="animation-card">
             <Lottie options={defaultOptions}
@@ -94,12 +105,15 @@ class TrendDashboard extends Component {
 }
 
 const mapStateToProps = (state,props) => {
+  let c = state.chart.articles.map((el, index) => {return el["dob"]})
+  console.log ("c is" + JSON.stringify(c))
   return {
     articles: state.chart.articles,
     trends: state.chart.trends,
     stock: state.chart.stock,
     company_name: state.chart.name,
-    id: state.chart.id
+    id: state.chart.id,
+    date_labels: c
   }
 }
 

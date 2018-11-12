@@ -31,11 +31,12 @@ const initialState = {
 export default (state = initialState, action) => {
     switch (action.type) {
         case types.POPULATE_CHART:
+        //stock: action.payload.stock,
             return {
                 ...state,
                 articles: action.payload.articles,
                 trends: action.payload.trends,
-                stock: action.payload.stock,
+                
                 name: action.payload.name,
                 id: action.payload.id
             }

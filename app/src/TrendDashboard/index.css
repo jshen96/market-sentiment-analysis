@@ -23,6 +23,13 @@
   position: absolute;
 }
 
+.flex-col {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: flex-start
+}
+
 .animation-card {
   position: absolute;
   left: 80%;

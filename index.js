@@ -45,6 +45,7 @@ app.get('/getList', async (req, res, next) => {
     let trend_t = await trend.getTrendWithCompanyId(d[i]["id"]);
     console.log("Current name: " + name)
      let s = {
+       "id": d[i]["id"],
        "name": name,
        "level": 1,
        "group": i + 1,
@@ -62,7 +63,8 @@ app.get('/getList', async (req, res, next) => {
       let t = {
         "name": art[j].headline,
         "level": 2,
-        "group": i + 1
+        "group": i + 1,
+        "url": art[j].url
       }
       let tarin = {
         "target": counter,
@@ -103,16 +105,17 @@ app.post('/company', async (req, res, next) => {
   const art = await articles.getCompanyArticlesWithIdAt(id, aMinuteAgo)
   const tweet = await tweets.getTweetWithCompanyIdAt(id, aMinuteAgo)
   const name = await company.getCompanyName(id);
-  const trend = await trend.getTrendWithCompanyId(id);
-  console.log(art)
-  let dict = {
+  const t = await trend.getTrendWithCompanyId(id);
+  
+  let di = {
     id: id,
     name: name,
     articles: art,
     tweets: tweet,
-    trends: trend
+    trends: t
   }
-  res.json(dict);
+  console.log(di)
+  res.json(di);
 });
 
 io.on('connection', (client) => {
